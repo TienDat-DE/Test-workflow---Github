@@ -8,6 +8,8 @@ on:
       - 'main'
       - 'release/**'
       - '!develop/**'
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
   workflow_dispatch:
   
 jobs:
@@ -15,5 +17,10 @@ jobs:
     name: Say Hello
     runs-on: ubuntu-latest
     steps:
+      - uses: mheap/github-action-required-labels@v5
+        with:
+          mode: exactly
+          count: 0
+          labels: "wontfix"
       - run: echo "TODAY=$(date +%Y-%m-%d)" >> $GITHUB_ENV
       - run: echo "Hello, World, today is $TODAY !"
