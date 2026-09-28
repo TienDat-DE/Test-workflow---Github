@@ -1,8 +1,14 @@
 name: hello world
 on:
   push:
+    paths:
+      - '!README.md'
+      - '!docs/**'
+      - 'cart.md'
     branches:
-      - main
+      - 'main'
+      - 'release/**'
+      - '!develop/**'
 jobs:
   say-hello:
     name: Say Hello
