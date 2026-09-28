@@ -8,6 +8,8 @@ on:
       - 'main'
       - 'release/**'
       - '!develop/**'
+  workflow_dispatch:
+  
 jobs:
   say-hello:
     name: Say Hello
