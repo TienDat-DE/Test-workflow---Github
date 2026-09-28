@@ -21,6 +21,6 @@ jobs:
         with:
           mode: exactly
           count: 0
-          labels: "wonfix"
+          labels: "wontfix"
       - run: echo "TODAY=$(date +%Y-%m-%d)" >> $GITHUB_ENV
       - run: echo "Hello, World, today is $TODAY !"
